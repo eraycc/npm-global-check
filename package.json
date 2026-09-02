@@ -1,7 +1,7 @@
 {
   "name": "npm-global-check",
-  "version": "1.0.2",
-  "description": "检查并升级全局安装的 npm 包，支持交互式选择和批量升级",
+  "version": "1.1.0",
+  "description": "检查并升级全局安装的 npm 包，支持交互式选择、批量升级、dry-run 预览和 JSON 输出",
   "main": "npm-global-check.js",
   "bin": {
     "npm-global-check": "npm-global-check.js"
@@ -15,22 +15,27 @@
     "update",
     "check",
     "upgrade",
+    "dry-run",
+    "json",
     "cli"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Eray",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/npm-global-check.git"
+    "url": "git+https://github.com/eraycc/npm-global-check.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/npm-global-check/issues"
+    "url": "https://github.com/eraycc/npm-global-check/issues"
   },
-  "homepage": "https://github.com/yourusername/npm-global-check#readme",
+  "homepage": "https://github.com/eraycc/npm-global-check#readme",
   "engines": {
     "node": ">=14.0.0"
   },
   "files": [
     "npm-global-check.js"
-  ]
+  ],
+  "dependencies": {
+    "semver": "^7.8.5"
+  }
 }
