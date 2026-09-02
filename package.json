@@ -1,0 +1,36 @@
+{
+  "name": "npm-global-check",
+  "version": "1.0.0",
+  "description": "检查并升级全局安装的 npm 包，支持交互式选择和批量升级",
+  "main": "npm-global-check.js",
+  "bin": {
+    "npm-check-g": "npm-global-check.js"
+  },
+  "scripts": {
+    "start": "node npm-global-check.js"
+  },
+  "keywords": [
+    "npm",
+    "global",
+    "update",
+    "check",
+    "upgrade",
+    "cli"
+  ],
+  "author": "Eray",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eraycc/npm-global-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eraycc/npm-global-check/issues"
+  },
+  "homepage": "https://github.com/eraycc/npm-global-check",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "npm-global-check.js"
+  ]
+}
