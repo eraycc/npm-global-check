@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * npm-global-check.js
+ * npm-global-check
  * 检查全局安装的 npm 包是否有新版本，并交互式/命令行升级
  *
  * 用法:
- *   node npm-global-check.js                    # 列出所有包（有更新的在前）+ 交互升级
- *   node npm-global-check.js --list             # 列出所有包（有更新的在前 + 无更新的），不交互
- *   node npm-global-check.js --check            # 仅显示有更新的包
- *   node npm-global-check.js --update all       # 检查并升级所有有更新的包
- *   node npm-global-check.js --update pkg1 pkg2 # 检查并升级指定包
+ *   npm-global-check                    # 列出所有包（有更新的在前）+ 交互升级
+ *   npm-global-check --list             # 列出所有包（有更新的在前 + 无更新的），不交互
+ *   npm-global-check --check            # 仅显示有更新的包
+ *   npm-global-check --update all       # 检查并升级所有有更新的包
+ *   npm-global-check --update pkg1,pkg2 # 检查并升级指定包（逗号分隔）
  */
 
 const { execSync, exec, spawnSync } = require('child_process');
@@ -330,10 +330,13 @@ async function interactiveUpgrade(pkgs, concurrency) {
 /** 打印使用帮助 */
 function showHelp() {
   console.log(`
-npm-global-check.js — 检查全局 npm 包更新并升级
+npm-global-check — 检查全局 npm 包更新并升级
 
 用法:
-  node npm-global-check.js [选项] [包名...]
+  npm-global-check [选项] [包名...]
+
+安装:
+  npm install -g npm-global-check
 
 模式选项（可组合，-c/--cc 可单独使用）:
   --list         列出所有全局包（有更新的在前 + 无更新的），不交互
@@ -349,12 +352,12 @@ npm-global-check.js — 检查全局 npm 包更新并升级
   q 退出
 
 示例:
-  node npm-global-check.js --list
-  node npm-global-check.js --check -c 20
-  node npm-global-check.js --update all
-  node npm-global-check.js --update opencode-ai,pnpm@latest
-  node npm-global-check.js --update @dbx-app/mcp-server@0.4.77
-  node npm-global-check.js          # 交互模式
+  npm-global-check --list
+  npm-global-check --check -c 20
+  npm-global-check --update all
+  npm-global-check --update opencode-ai,pnpm@latest
+  npm-global-check --update @dbx-app/mcp-server@0.4.77
+  npm-global-check                     # 交互模式
 
 跨平台: 兼容 Windows / Linux
 `);
