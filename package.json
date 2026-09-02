@@ -1,6 +1,6 @@
 {
   "name": "npm-global-check",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "检查并升级全局安装的 npm 包，支持交互式选择和批量升级",
   "main": "npm-global-check.js",
   "bin": {
