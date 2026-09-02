@@ -7,20 +7,18 @@
 - **并发查询**：默认 12 路并发查询最新版本，可自定义
 - **多种模式**：列表 / 检查 / 升级 / 交互
 
+## 安装
+
+```bash
+npm install -g npm-global-check
+```
+
+安装后可直接运行 `npm-global-check` 命令。
+
 ## 环境要求
 
 - Node.js ≥ 14
 - 已安装 `npm`，且全局包列表可访问（`npm list -g` 正常）
-
-## 安装 / 运行
-
-脚本无依赖，直接运行即可：
-
-```bash
-node npm-global-check.js
-```
-
-> Windows 上请确保 `npm` 在 `PATH` 中。脚本会自动解析 `npm.cmd`。
 
 ## 命令选项
 
@@ -39,7 +37,7 @@ node npm-global-check.js
 ### 1. 交互模式（默认，不带模式参数）
 
 ```bash
-node npm-global-check.js
+npm-global-check
 ```
 
 先列出全部包，然后进入交互。输入以下任一格式（多个用英文逗号分隔）：
@@ -60,7 +58,7 @@ node npm-global-check.js
 ### 2. `--list` 列出全部
 
 ```bash
-node npm-global-check.js --list
+npm-global-check --list
 ```
 
 显示全部全局包，有更新的排前面，无更新的排在后面。
@@ -68,7 +66,7 @@ node npm-global-check.js --list
 ### 3. `--check` 仅看有更新的
 
 ```bash
-node npm-global-check.js --check
+npm-global-check --check
 ```
 
 只显示有更新的包。
@@ -76,12 +74,12 @@ node npm-global-check.js --check
 ### 4. `--update` 命令行升级
 
 ```bash
-node npm-global-check.js --update all                  # 升级全部有更新的
-node npm-global-check.js --update opencode-ai          # 升级指定包
-node npm-global-check.js --update opencode-ai,pnpm     # 多个包（逗号分隔）
-node npm-global-check.js --update pnpm@latest          # 指定升级到最新
-node npm-global-check.js --update pnpm@11.25.0         # 指定升级到固定版本
-node npm-global-check.js --update @dbx-app/mcp-server@0.4.77
+npm-global-check --update all                  # 升级全部有更新的
+npm-global-check --update opencode-ai          # 升级指定包
+npm-global-check --update opencode-ai,pnpm     # 多个包（逗号分隔）
+npm-global-check --update pnpm@latest          # 指定升级到最新
+npm-global-check --update pnpm@11.25.0         # 指定升级到固定版本
+npm-global-check --update @dbx-app/mcp-server@0.4.77
 ```
 
 - 多个包支持**逗号分隔**，也支持空格分隔
@@ -94,8 +92,8 @@ node npm-global-check.js --update @dbx-app/mcp-server@0.4.77
 默认 12 路并发查询最新版本，可用 `-c` / `--cc` 调整：
 
 ```bash
-node npm-global-check.js --check -c 20     # 20 路并发（更快）
-node npm-global-check.js --check --cc 2    # 2 路并发（更保守）
+npm-global-check --check -c 20     # 20 路并发（更快）
+npm-global-check --check --cc 2    # 2 路并发（更保守）
 ```
 
 实测 13 个包：并发 12 约 10s，并发 2 约 19s，并发 20 约 8s。
@@ -106,16 +104,16 @@ node npm-global-check.js --check --cc 2    # 2 路并发（更保守）
 
 ```bash
 # 看看哪些包有更新
-node npm-global-check.js --check
+npm-global-check --check
 
 # 升级全部有更新的包
-node npm-global-check.js --update all
+npm-global-check --update all
 
 # 只升级某一个包到最新
-node npm-global-check.js --update @dbx-app/mcp-server
+npm-global-check --update @dbx-app/mcp-server
 
 # 交互式：先列出，再逐个/批量升级
-node npm-global-check.js
+npm-global-check
 ```
 
 ## 输出示例
